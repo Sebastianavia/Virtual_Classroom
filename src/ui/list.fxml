@@ -9,11 +9,11 @@
    <children>
       <TableView fx:id="tabla" layoutX="46.0" layoutY="14.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columns>
-          <TableColumn fx:id="colum1" prefWidth="105.0" text="User" />
-          <TableColumn fx:id="colum2" minWidth="2.0" prefWidth="119.0" text="Gender" />
-            <TableColumn fx:id="colum3" prefWidth="130.0" text="Career" />
-            <TableColumn fx:id="colum4" prefWidth="114.0" text="Birthday" />
-            <TableColumn fx:id="colum5" prefWidth="131.0" text="Browser" />
+          <TableColumn fx:id="columuser" prefWidth="105.0" text="User" />
+          <TableColumn fx:id="columgender" minWidth="2.0" prefWidth="119.0" text="Gender" />
+            <TableColumn fx:id="columcareer" prefWidth="130.0" text="Career" />
+            <TableColumn fx:id="columbirthday" prefWidth="114.0" text="Birthday" />
+            <TableColumn fx:id="columbrowser" prefWidth="131.0" text="Browser" />
         </columns>
       </TableView>
    </children>

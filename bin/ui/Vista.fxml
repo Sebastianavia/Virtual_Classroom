@@ -114,8 +114,7 @@
                   </GridPane>
                   <VBox layoutX="467.0" layoutY="246.0" prefHeight="58.0" prefWidth="127.0" AnchorPane.rightAnchor="8.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="125.0" text="Create account" />
-                        <Button mnemonicParsing="false" text="Clean" />
+                        <Button mnemonicParsing="false" onAction="#createaccount" prefHeight="0.0" prefWidth="125.0" text="Create account" />
                      </children>
                   </VBox>
                   <ImageView fx:id="img" fitHeight="112.0" fitWidth="161.0" layoutX="437.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true" />

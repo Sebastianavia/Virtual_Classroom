@@ -1,7 +1,11 @@
 package ui;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,18 +14,41 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
+import model.Browser;
+import model.Career;
 import model.Classroom;
+import model.User;
 
 public class ClassroomGUI {
+	private ObservableList<?> career;
+	private ObservableList<Career> browser;
 	
 	
+	 @FXML
+	 private TableView<User> tabla;
+
+	 @FXML
+	    private TableColumn<User, String> columuser;
+
+	    @FXML
+	    private TableColumn<User, String> columgender;
+
+	    @FXML
+	    private TableColumn<User, String> columcareer;
+
+	    @FXML
+	    private TableColumn<User, String> columbirthday;
+
+	    @FXML
+	    private TableColumn<User, String> columbrowser;
 	
 	@FXML
     private BorderPane principal;
@@ -97,6 +124,7 @@ public class ClassroomGUI {
         Parent vista = fxmlLoader.load();
         principal.getChildren().clear();
         principal.setCenter(vista);
+        
 	}
 	
 	@FXML
@@ -107,10 +135,11 @@ public class ClassroomGUI {
         Parent list = fxmlLoader.load();
         principal.getChildren().clear();
         principal.setCenter(list);
+        initializeTableView();
 	}
 	
 	@FXML
-   public  void createaccount(ActionEvent event) {
+   public  void createaccount(ActionEvent event) throws IOException {
 		
 		String usuario = txtUsername.getText();	
 		String contraseña =  txtPassword.getText();	
@@ -123,7 +152,27 @@ public class ClassroomGUI {
 		Image image = new Image("/img/1.png");
 		
 		classroom.addUser( usuario,  contraseña, perfil, ge, carrera, fecha, navegador, image);
+		cambiarlista(event);
     }
+	
+	@FXML
+    private void initializeTableView() {
+        ObservableList<User> observableList;
+        observableList = FXCollections.observableArrayList(classroom.getUsers());
+        tabla.setItems(observableList);
+
+        columuser.setCellValueFactory(new PropertyValueFactory<User, String>("username"));
+        columgender.setCellValueFactory(new PropertyValueFactory<User, String>("gender"));
+        columcareer.setCellValueFactory(new PropertyValueFactory<User, String>("career"));
+        columbirthday.setCellValueFactory(new PropertyValueFactory<User, String>("born"));
+        columbrowser.setCellValueFactory(new PropertyValueFactory<User, String>("browse"));
+        
+        
+        
+
+    }
+	
+	
 	
 	
 	

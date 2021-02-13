@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ListView layoutX="172.0" layoutY="50.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <TableView fx:id="tabla" layoutX="46.0" layoutY="14.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columns>
+          <TableColumn fx:id="columuser" prefWidth="105.0" text="User" />
+          <TableColumn fx:id="columgender" minWidth="2.0" prefWidth="119.0" text="Gender" />
+            <TableColumn fx:id="columcareer" prefWidth="130.0" text="Career" />
+            <TableColumn fx:id="columbirthday" prefWidth="114.0" text="Birthday" />
+            <TableColumn fx:id="columbrowser" prefWidth="131.0" text="Browser" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>
