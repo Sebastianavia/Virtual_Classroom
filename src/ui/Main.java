@@ -2,17 +2,20 @@ package ui;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.GridPane;
+
 import javafx.stage.Stage;
+import model.Classroom;
 
 
 public class Main extends Application{
-	private loginGUI LoginGUI;
-	
+	private ClassroomGUI classroomGUI;
+	private Classroom classroom;
 	
 	public Main() {
-		LoginGUI = new loginGUI();
+		classroom = new Classroom();
+		classroomGUI = new ClassroomGUI(classroom);
 		
 	}
     
@@ -22,12 +25,13 @@ public class Main extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        GridPane root = FXMLLoader.load(getClass().getResource("Classroom.fxml"));
-        
-        Scene scene = new Scene(root);
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("wlcome");
-        primaryStage.show();
-
+    	
+    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("inicio.fxml"));
+    	 fxmlLoader.setController(classroomGUI);
+         Parent root = fxmlLoader.load();
+         Scene scene = new Scene(root);
+         primaryStage.setScene(scene);
+         primaryStage.setTitle("Class Room");
+         primaryStage.show();
     }
 }

@@ -5,7 +5,6 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
@@ -18,7 +17,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.Controller">
+<AnchorPane fx:id="principla3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <SplitPane dividerPositions="0.5769230769230769" layoutX="86.0" layoutY="364.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -115,16 +114,16 @@
                   </GridPane>
                   <VBox layoutX="467.0" layoutY="246.0" prefHeight="58.0" prefWidth="127.0" AnchorPane.rightAnchor="8.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#save" prefHeight="0.0" prefWidth="125.0" text="Create account" />
+                        <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="125.0" text="Create account" />
                         <Button mnemonicParsing="false" text="Clean" />
                      </children>
                   </VBox>
                   <ImageView fx:id="img" fitHeight="112.0" fitWidth="161.0" layoutX="437.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="50.0" prefWidth="598.0">
                <children>
-                  <ListView fx:id="lstUser" layoutX="14.0" prefHeight="213.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="-14.0" AnchorPane.topAnchor="0.0" />
+                  <Button layoutX="253.0" layoutY="109.0" mnemonicParsing="false" onAction="#loguser" text="Sing in" />
                </children>
             </AnchorPane>
         </items>

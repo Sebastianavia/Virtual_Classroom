@@ -1,19 +1,22 @@
 package model;
 
+import javafx.scene.image.Image;
+
 public class User {
 	
 	private String username;
 	private String password;
 	private String profile;
 	private String gender;
-	private Career career;
+	private String career;
 	private String born;
-	private Browser browse;
+	private String browse;
+	private Image photo;
 	
 
 
 
-public User(String username, String password,String profile,String gender,Career career,String born,Browser browse){
+public User(String username, String password,String profile,String gender,String career,String born,String browse, Image photo){
 
 	this.username = username;
 	this.password = password;
@@ -22,6 +25,7 @@ public User(String username, String password,String profile,String gender,Career
 	this.career = career;
 	this.born = born;
 	this.browse = browse;
+	this.photo = photo;
 	
 }
 
@@ -58,11 +62,11 @@ public User(String username, String password,String profile,String gender,Career
 		this.gender = gender;
 	}
 
-	public Career getCareer() {
+	public String getCareer() {
 		return career;
 	}
 
-	public void setCareer(Career career) {
+	public void setCareer(String career) {
 		this.career = career;
 	}
 
@@ -74,13 +78,15 @@ public User(String username, String password,String profile,String gender,Career
 		this.born = born;
 	}
 
-	public Browser getBrowse() {
+	public String getBrowse() {
 		return browse;
 	}
 
-	public void setBrowse(Browser browse) {
+	public void setBrowse(String browse) {
 		this.browse = browse;
 	}
+	
+	
 	@Override
 	public String toString() {
 		return  username+ " ,"  + password + " ," + profile + " ," + gender +" ,"+ career + " ,"+ born + " ,"+ browse;
